@@ -18,19 +18,19 @@
         <!-- Nav pills -->
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="../index.html">Início</a>
+                <a class="nav-link" data-toggle="pill" href="../index.php">Início</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./catalogo.html">Catálogo</a>
+                <a class="nav-link" data-toggle="pill" href="./catalogo.php">Catálogo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="./cadastro.html">Cadastro</a>
+                <a class="nav-link active" data-toggle="pill" href="./cadastro.php">Cadastro</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./reserva.html">Reserva</a>
+                <a class="nav-link" data-toggle="pill" href="./reserva.php">Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./sobrenos.html">Sobre Nós</a>
+                <a class="nav-link" data-toggle="pill" href="./sobrenos.php">Sobre Nós</a>
             </li>
         </ul>
         <!--CONTEUDO-->
