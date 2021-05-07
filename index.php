@@ -6,34 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="/css/custom.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/7d00217c81.js" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
 
 <body>
-    <div class="container" id="merda">
-        <!-- Nav pills -->
+    <div class="container" id="global">
+        <!-- Header -->
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="./pages/index.php">Início</a>
+                <a class="nav-link" data-toggle="pill" href="index.php">Início</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./pages/catalogo.php">Catálogo</a>
+                <a class="nav-link" data-toggle="pill" href="/pages/sobrenos.php">Sobre Nós</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./pages/cadastro.php">Cadastro</a>
+                <a class="nav-link" data-toggle="pill" href="/pages/catalogo.php">Catálogo</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./pages/reserva.php">Reserva</a>
+                <a class="nav-link" data-toggle="pill" href="/pages/contato.php">Contato</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./pages/sobrenos.php">Sobre Nós</a>
+                <a class="btn btn-primary" href="/pages/reserva.php" role="button">Faça sua Reserva</a>
             </li>
+
         </ul>
+        <!-- Fim Header -->
 
         <!-- CARROUSEL -->
         <div>
@@ -94,39 +98,9 @@
         </div>
 
         <!-- Footer -->
-        <footer class="text-center text-white" style="background-color: #f1f1f1;">
-            <!-- Grid container -->
-            <div class="container pt-4">
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-
-                    <!-- Twitter -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-
-                    <!-- Google -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
-
-                    <!-- Instagram -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-
-                    <!-- Linkedin -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-
-                    <!-- Github -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
-                </section>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2021 Copyright
-            </div>
-            <!-- Copyright -->
-        </footer>
+        <?php
+        include_once "./assets/components/footer.php";
+        ?>
         <!-- Footer -->
 
 

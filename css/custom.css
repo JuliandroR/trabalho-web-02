@@ -4,7 +4,7 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-.container#merda {
+.container#global {
     background-color: rgb(243, 243, 243);
     box-shadow: 0px 1px 5px 4px rgba(0, 0, 0, 0.2);
     max-height: 300vh;
@@ -29,12 +29,12 @@ html {
     
 }
 
-#row-custom2 {
+.row-custom2 {
     
     margin-bottom:10px;
 }
 
-#coluna-conteudo-1 {
+.coluna-conteudo-1 {
     min-height: 30vh;
     
 }
