@@ -23,10 +23,10 @@
                 <a class="nav-link" data-toggle="pill" href="./catalogo.html">Catálogo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="./cadastro.html">Cadastro</a>
+                <a class="nav-link active" data-toggle="pill" href="./cadastro.html">Cadastro</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="./reserva.html">Reserva</a>
+                <a class="nav-link" data-toggle="pill" href="./reserva.html">Reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="pill" href="./sobrenos.html">Sobre Nós</a>
@@ -35,19 +35,12 @@
         <!--CONTEUDO-->
         <div class="container" id="container-conteudo">
             <div class="row " id="row-custom1">
-                <h1 class="display-4">Faça sua reserva hoje mesmo</h1>
-                <form action="">
+                <form>
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="name">Digite seu nome</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Ex.: João da Silva">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label for="cpf">Digite seu CPF</label>
-                                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Ex.: 123.321.132-22">
                             </div>
                         </div>
                     </div>
@@ -67,54 +60,15 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <label for="destiny">Escolha seu destino</label>
-                            <select class="form-control" name="destiny" id="destiny">
-                                <option value=null>Escolha seu destino</option>
-                                <option value="CampoGrande"> Campo Grande - MS </option>
-                                <option value="FeiradeSantana"> Feira de Santana - BA </option>
-                                <option value="SanAndres"> San Andres - Colômbia </option>
-                                <option value="SãoPetersburgo"> São Petersburgo - Rússia </option>
-                                <option value="Toronto"> Toronto - Canadá </option>
-                                <option value="Tokio"> Tókio - Japão </option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <label for="quantDays">Quantidade de dias</label>
-                            <input type="tel" name="quantDays" id="quantDays" class="form-control">
-                        </div>
-                        <div class="col-sm-3">
-                            <label for="quantPersons">Quantidade de pessoas</label>
-                            <input type="tel" name="quantPersons" id="quantPersons" class="form-control">
-                        </div>
-                        <div class="col-sm-3">
-                            <label for="dateGo">Data de ida</label>
-                            <input type="date" name="dateGo" id="dateGo" class="form-control">
-                        </div>
-                        <div class="col-sm-3">
-                            <label for="dateBack">Data de volta</label>
-                            <input type="date" name="dateBack" id="dateBack" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <label for="securityBagage">Opta por bagagem segura?</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="securityBagage" id="sim" value="yes">
-                                <label class="form-check-label" for="sim">Sim</label>
+                            <div class="form-group">
+                                <label for="message">Digite sua mensagem</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="securityBagage" id="não" value="no">
-                                <label class="form-check-label" for="não">Não</label>
-                            </div>
-
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Fazer reserva</button>
+                    <button type="submit" class="btn btn-primary">Enviar contato</button>
                 </form>
+
             </div>
 
         </div>
