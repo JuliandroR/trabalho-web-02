@@ -23,7 +23,7 @@
         <!--CONTEUDO-->
         <div class="container" id="container-conteudo">
             <div class="row " id="row-custom1">
-                <form>
+                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -50,7 +50,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="message">Digite sua mensagem</label>
-                                <textarea class="form-control" id="message" rows="3"></textarea>
+                                <textarea class="form-control" name="message" id="message" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -60,6 +60,30 @@
             </div>
 
         </div>
+
+        <!-- Processamento dos dados -->
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = htmlspecialchars($_POST["name"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $phone = htmlspecialchars($_POST["phone"]);
+            $message = htmlspecialchars($_POST["message"]);
+            $cont = 0;
+
+            if (preg_match('/^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i', $email)) {
+                $cont += 1;
+            } else {
+                echo "<div class='alert alert-danger' role='alert'> O e-mail $email está incorreto </div>";
+            }
+
+            if (preg_match('^\(+[0-9]{2,3}\) [9]{1,1}[0-9]{4}-[0-9]{4}$^', $phone)) {
+                $cont += 1;
+            } else {
+                echo "<div class='alert alert-danger' role='alert'> O telefone $phone está incorreto </div>";
+            }
+        }
+        ?>
+        <!-- Fim processamento dos dados -->
 
         <!--Footer-->
         <?php
