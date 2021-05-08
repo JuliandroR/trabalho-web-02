@@ -107,28 +107,28 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $data_validation = array();
 
-                    $name = htmlspecialchars($_POST['name']);
-                    $cpf = htmlspecialchars($_POST['cpf']);
-                    $email = htmlspecialchars($_POST['email']);
-                    $phone = htmlspecialchars($_POST['phone']);
+                    $name = isset($_POST['name'])? $_POST['name'] : '';
+                    $cpf = isset($_POST['cpf'])? $_POST['cpf'] : '';
+                    $email = isset($_POST['email'])? $_POST['email'] : '';
+                    $phone = isset($_POST['phone'])? $_POST['phone'] : '';
 
                     if (empty($name))
-                        echo "<div class='alert alert-danger' role='alert'> O nome $name está incorreto </div>";
+                        echo "<div class='alert alert-danger' role='alert'> O nome " .  htmlspecialchars($name) . " está incorreto </div>";
                     else
                         array_push($data_validation, true);
 
-                    if (!preg_match('/([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/', $cpf))
-                        echo "<div class='alert alert-danger' role='alert'> O CPF $cpf está incorreto </div>";
+                    if (empty($cpf) || !preg_match('/([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/', $cpf))
+                        echo "<div class='alert alert-danger' role='alert'> O CPF " .  htmlspecialchars($cpf) . " está incorreto </div>";
                     else
                         array_push($data_validation, true);
 
-                    if (!preg_match('/^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i', $email))
-                        echo "<div class='alert alert-danger' role='alert'> O e-mail $email está incorreto </div>";
+                    if (empty($email) || !preg_match('/^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i', $email))
+                        echo "<div class='alert alert-danger' role='alert'> O e-mail " .  htmlspecialchars($email) . " está incorreto </div>";
                     else
                         array_push($data_validation, true);
 
-                    if (!preg_match('/[0-9]{2}[6789][0-9]{3,4}[0-9]{4}/', $phone))
-                        echo "<div class='alert alert-danger' role='alert'> O telefone $phone está incorreto </div>";
+                    if (empty($phone) || !preg_match('/\(\d{2,}\) \d{4,}\-\d{4}/', $phone))
+                        echo "<div class='alert alert-danger' role='alert'> O telefone " .  htmlspecialchars($phone) . " está incorreto </div>";
                     else
                         array_push($data_validation, true);
 
