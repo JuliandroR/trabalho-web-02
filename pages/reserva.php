@@ -105,6 +105,8 @@
                 </form>
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $data_validation = array();
+
                     $name = htmlspecialchars($_POST['name']);
                     $cpf = htmlspecialchars($_POST['cpf']);
                     $email = htmlspecialchars($_POST['email']);
@@ -112,15 +114,23 @@
 
                     if (empty($name))
                         echo "<div class='alert alert-danger' role='alert'> O nome $name está incorreto </div>";
+                    else 
+                        array_push($data_validation, false);
 
                     if (!preg_match('/([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/', $cpf))
                         echo "<div class='alert alert-danger' role='alert'> O CPF $cpf está incorreto </div>";
+                    else 
+                        array_push($data_validation, false);
 
                     if (!preg_match('/^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i', $email))
                         echo "<div class='alert alert-danger' role='alert'> O e-mail $email está incorreto </div>";
+                    else 
+                        array_push($data_validation, false);
 
                     if (!preg_match('/[0-9]{2}[6789][0-9]{3,4}[0-9]{4}/', $phone))
                         echo "<div class='alert alert-danger' role='alert'> O telefone $phone está incorreto </div>";
+                    else 
+                        array_push($data_validation, false);
 
                     if (!in_array(false, $data_validation)) {
                         header("Location: http://localhost/pages/travelSucess.php");
