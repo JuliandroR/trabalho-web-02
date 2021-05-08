@@ -70,6 +70,18 @@
             $message = htmlspecialchars($_POST["message"]);
             $cont = 0;
 
+            if (empty($name)) {
+                echo "<div class='alert alert-danger' role='alert'> O campo nome não foi preenchido </div>";
+            } else {
+                $cont += 1;
+            }
+
+            if (empty($message)) {
+                echo "<div class='alert alert-danger' role='alert'> Você esqueceu de inserir uma mensagem </div>";
+            } else {
+                $cont += 1;
+            }
+
             if (preg_match('/^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i', $email)) {
                 $cont += 1;
             } else {
@@ -81,6 +93,11 @@
             } else {
                 echo "<div class='alert alert-danger' role='alert'> O telefone $phone está incorreto </div>";
             }
+
+            if ($cont == 4) {
+                header("Location: http://localhost:3000/index.php");
+                die();
+            };
         }
         ?>
         <!-- Fim processamento dos dados -->
