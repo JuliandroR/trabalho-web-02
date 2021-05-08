@@ -77,6 +77,14 @@
                         <th class="text-center" scope="row">Quantidade de dias</th>
                         <td>10</td>
                     </tr>
+
+                    <tr>
+                        <th class="text-center" scope="row">Data da ida</th>
+                        <td>10/12/2021</td>
+
+                        <th class="text-center" scope="row">Data de volta</th>
+                        <td>20/12/2021</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

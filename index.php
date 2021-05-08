@@ -17,23 +17,23 @@
         <!-- Header -->
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="index.php">Início</a>
+                <a class="nav-link" href="index.php">Início</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="/pages/sobrenos.php">Sobre Nós</a>
+                <a class="nav-link" href="pages/sobrenos.php">Sobre Nós</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="/pages/catalogo.php">Catálogo</a>
+                <a class="nav-link" href="./pages/catalogo.php">Catálogo</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="/pages/contato.php">Contato</a>
+                <a class="nav-link" href="./pages/contato.php">Contato</a>
             </li>
 
             <li class="nav-item">
-                <a class="btn btn-primary" href="/pages/reserva.php" role="button">Faça sua Reserva</a>
+                <a class="btn btn-primary" href="./pages/reserva.php" role="button">Faça sua Reserva</a>
             </li>
 
         </ul>
