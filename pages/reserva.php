@@ -19,12 +19,12 @@
         include_once "../assets/components/header.php";
         ?>
         <!-- Fim Header -->
-        
+
         <!--CONTEUDO-->
         <div class="container" id="container-conteudo">
             <div class="row " id="row-custom1">
                 <h1 class="display-4">Faça sua reserva hoje mesmo</h1>
-                <form action="">
+                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div class="row">
                         <div class="col-sm-8">
                             <div class="form-group">
@@ -103,6 +103,31 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Fazer reserva</button>
                 </form>
+                <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $name = htmlspecialchars($_POST['name']);
+                    $cpf = htmlspecialchars($_POST['cpf']);
+                    $email = htmlspecialchars($_POST['email']);
+                    $phone = htmlspecialchars($_POST['phone']);
+
+                    if (empty($name))
+                        echo "<div class='alert alert-danger' role='alert'> O nome $name está incorreto </div>";
+
+                    if (!preg_match('/([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/', $cpf))
+                        echo "<div class='alert alert-danger' role='alert'> O CPF $cpf está incorreto </div>";
+
+                    if (!preg_match('/^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i', $email))
+                        echo "<div class='alert alert-danger' role='alert'> O e-mail $email está incorreto </div>";
+
+                    if (!preg_match('/[0-9]{2}[6789][0-9]{3,4}[0-9]{4}/', $phone))
+                        echo "<div class='alert alert-danger' role='alert'> O telefone $phone está incorreto </div>";
+
+                    if (!in_array(false, $data_validation)) {
+                        header("Location: http://localhost/pages/travelSucess.php");
+                        die();
+                    }
+                }
+                ?>
             </div>
 
         </div>
